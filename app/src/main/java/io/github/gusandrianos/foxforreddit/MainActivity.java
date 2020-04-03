@@ -11,6 +11,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -24,7 +25,7 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bt;
+    TextView bt;
     int LAUNCH_SECOND_ACTIVITY = 1;
     String BEARER = "65888787-vQS73TapvTc5oABrMf_lOLkXyvA";
     OkHttpClient client = new OkHttpClient();
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bt = findViewById(R.id.login);
+        bt = findViewById(R.id.result);
     }
 
     public void loadWebPage(View view) {
