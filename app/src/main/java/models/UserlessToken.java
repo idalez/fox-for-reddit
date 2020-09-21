@@ -1,5 +1,6 @@
 package models;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class UserlessToken {
@@ -36,8 +37,4 @@ public class UserlessToken {
         return scope;
     }
 
-    @Override
-    public String toString(){
-        return getAccess_token();
-    }
 }

@@ -2,6 +2,7 @@ package requests;
 
 import android.util.Base64;
 
+import io.reactivex.Observable;
 import models.UserlessToken;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -11,7 +12,7 @@ import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
-public interface UserlessRequest {
+public interface TokenRequest {
 
     // concatenate client ID and empty string with colon for authentication
     //String credentials = Constants.CLIENT_ID + ":" + "";
@@ -21,8 +22,8 @@ public interface UserlessRequest {
 
 
 
-    @FormUrlEncoded
+    @FormUrlEncoded //Content-type: application/x-www-form-urlencoded
     @POST("/api/v1/access_token")
-    Call<UserlessToken> createToken(@Header("Authorization") String credentials, @Field("grant_type") String grant_type, @Field("device_id") String device_id);
+    Observable<UserlessToken> createToken(@Header("Authorization") String credentials, @Field("grant_type") String grant_type, @Field("device_id") String device_id);
 
 }
