@@ -241,4 +241,16 @@ public class Post {
     }
 
     public boolean isSelf() { return isSelf; }
+
+    public int getNumComments() {
+        return numComments;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
 }

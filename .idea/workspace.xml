@@ -7,10 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82b1a41b-34ee-42e5-b16d-d53e08469ec3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/data/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/data/models/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/ui/RecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/ui/RecyclerViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/li_image.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/li_image.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/li_link.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/li_link.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/li_poll.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/li_poll.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/li_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/li_text.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/li_video.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/li_video.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +72,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -128,5 +136,27 @@
       <updated>1601468158279</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="804" y="257" width="374" height="599" key="#com.intellij.ide.util.MemberChooser" timestamp="1601473931030">
+      <screen x="72" y="26" width="1848" height="1054" />
+    </state>
+    <state x="804" y="257" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/72.26.1848.1054@72.26.1848.1054" timestamp="1601473931030" />
+    <state width="1802" height="276" key="GridCell.Tab.0.bottom" timestamp="1601485651863">
+      <screen x="72" y="26" width="1848" height="1054" />
+    </state>
+    <state width="1802" height="276" key="GridCell.Tab.0.bottom/72.26.1848.1054@72.26.1848.1054" timestamp="1601485651863" />
+    <state width="1802" height="276" key="GridCell.Tab.0.center" timestamp="1601485651861">
+      <screen x="72" y="26" width="1848" height="1054" />
+    </state>
+    <state width="1802" height="276" key="GridCell.Tab.0.center/72.26.1848.1054@72.26.1848.1054" timestamp="1601485651861" />
+    <state width="1802" height="276" key="GridCell.Tab.0.left" timestamp="1601485651861">
+      <screen x="72" y="26" width="1848" height="1054" />
+    </state>
+    <state width="1802" height="276" key="GridCell.Tab.0.left/72.26.1848.1054@72.26.1848.1054" timestamp="1601485651861" />
+    <state width="1802" height="276" key="GridCell.Tab.0.right" timestamp="1601485651862">
+      <screen x="72" y="26" width="1848" height="1054" />
+    </state>
+    <state width="1802" height="276" key="GridCell.Tab.0.right/72.26.1848.1054@72.26.1848.1054" timestamp="1601485651862" />
   </component>
 </project>
