@@ -7,25 +7,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82b1a41b-34ee-42e5-b16d-d53e08469ec3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/ui/PostRecyclerView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_volume_off_grey_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_volume_up_grey_24dp.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/data/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/data/models/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/data/models/Preview.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/data/models/Preview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/data/models/RedditVideoPreview.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/data/models/RedditVideoPreview.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/ui/RecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/gusandrianos/foxforreddit/ui/RecyclerViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/li_image.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/li_image.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/li_link.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/li_link.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/li_poll.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/li_poll.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/li_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/li_text.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/li_video.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/li_video.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5_API_27" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="2a687c9" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -42,6 +47,14 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -138,25 +151,33 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="804" y="257" width="374" height="599" key="#com.intellij.ide.util.MemberChooser" timestamp="1601473931030">
+    <state x="591" y="214" width="800" height="684" key="#Inspections" timestamp="1601560776870">
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
-    <state x="804" y="257" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/72.26.1848.1054@72.26.1848.1054" timestamp="1601473931030" />
-    <state width="1802" height="276" key="GridCell.Tab.0.bottom" timestamp="1601485651863">
+    <state x="591" y="214" width="800" height="684" key="#Inspections/72.26.1848.1054@72.26.1848.1054" timestamp="1601560776870" />
+    <state x="804" y="257" width="374" height="599" key="#com.intellij.ide.util.MemberChooser" timestamp="1601565245664">
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
-    <state width="1802" height="276" key="GridCell.Tab.0.bottom/72.26.1848.1054@72.26.1848.1054" timestamp="1601485651863" />
-    <state width="1802" height="276" key="GridCell.Tab.0.center" timestamp="1601485651861">
+    <state x="804" y="257" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/72.26.1848.1054@72.26.1848.1054" timestamp="1601565245664" />
+    <state x="579" y="311" width="824" height="491" key="AndroidCreateResourceFileDialog" timestamp="1601552491314">
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
-    <state width="1802" height="276" key="GridCell.Tab.0.center/72.26.1848.1054@72.26.1848.1054" timestamp="1601485651861" />
-    <state width="1802" height="276" key="GridCell.Tab.0.left" timestamp="1601485651861">
+    <state x="579" y="311" width="824" height="491" key="AndroidCreateResourceFileDialog/72.26.1848.1054@72.26.1848.1054" timestamp="1601552491314" />
+    <state width="1802" height="276" key="GridCell.Tab.0.bottom" timestamp="1601564349531">
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
-    <state width="1802" height="276" key="GridCell.Tab.0.left/72.26.1848.1054@72.26.1848.1054" timestamp="1601485651861" />
-    <state width="1802" height="276" key="GridCell.Tab.0.right" timestamp="1601485651862">
+    <state width="1802" height="276" key="GridCell.Tab.0.bottom/72.26.1848.1054@72.26.1848.1054" timestamp="1601564349531" />
+    <state width="1802" height="276" key="GridCell.Tab.0.center" timestamp="1601564349531">
       <screen x="72" y="26" width="1848" height="1054" />
     </state>
-    <state width="1802" height="276" key="GridCell.Tab.0.right/72.26.1848.1054@72.26.1848.1054" timestamp="1601485651862" />
+    <state width="1802" height="276" key="GridCell.Tab.0.center/72.26.1848.1054@72.26.1848.1054" timestamp="1601564349531" />
+    <state width="1802" height="276" key="GridCell.Tab.0.left" timestamp="1601564349531">
+      <screen x="72" y="26" width="1848" height="1054" />
+    </state>
+    <state width="1802" height="276" key="GridCell.Tab.0.left/72.26.1848.1054@72.26.1848.1054" timestamp="1601564349531" />
+    <state width="1802" height="276" key="GridCell.Tab.0.right" timestamp="1601564349531">
+      <screen x="72" y="26" width="1848" height="1054" />
+    </state>
+    <state width="1802" height="276" key="GridCell.Tab.0.right/72.26.1848.1054@72.26.1848.1054" timestamp="1601564349531" />
   </component>
 </project>

@@ -167,7 +167,7 @@ public class Post {
     private boolean authorPatreonFlair;
 
     @SerializedName("media")
-    private Object media;
+    private Media media;
 
     @SerializedName("title")
     private String title;
@@ -216,6 +216,10 @@ public class Post {
         return stickied;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
     public Long getCreated() {
         return created;
     }
@@ -252,5 +256,13 @@ public class Post {
 
     public String getThumbnail() {
         return thumbnail;
+    }
+
+    public Media getMedia() {
+        return media;
+    }
+
+    public boolean isVideo() {
+        return isVideo;
     }
 }
