@@ -1,13 +1,11 @@
 package io.github.gusandrianos.foxforreddit.utilities;
 
+import android.app.Application;
 import android.util.Log;
 
-import io.github.gusandrianos.foxforreddit.data.models.Token;
 import io.github.gusandrianos.foxforreddit.data.repositories.PostRepository;
 import io.github.gusandrianos.foxforreddit.data.repositories.TokenRepository;
-import io.github.gusandrianos.foxforreddit.viewmodels.PopularFragmentViewModelFactory;
-import io.github.gusandrianos.foxforreddit.viewmodels.TokenViewModel;
-import io.github.gusandrianos.foxforreddit.viewmodels.TokenViewModelFactory;
+import io.github.gusandrianos.foxforreddit.viewmodels.PostViewModelFactory;
 
 public class InjectorUtils {
 
@@ -27,14 +25,15 @@ public class InjectorUtils {
 
     }
 
-    public PopularFragmentViewModelFactory providePopularFragmentViewModelFactory() {
+    public PostViewModelFactory providePostViewModelFactory() {
         PostRepository postRepository = PostRepository.getInstance();
-        return new PopularFragmentViewModelFactory(postRepository);
+        return new PostViewModelFactory(postRepository);
     }
 
-    public TokenViewModelFactory provideTokenViewModelFactory() {
+    public TokenRepository provideTokenRepository(Application application) {
         TokenRepository tokenRepository = TokenRepository.getInstance();
-        return new TokenViewModelFactory(tokenRepository);
+        tokenRepository.setApplication(application);
+        return tokenRepository;
     }
 }
 

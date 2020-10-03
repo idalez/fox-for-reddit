@@ -272,4 +272,8 @@ public class Post {
     public PollData getPollData() {
         return pollData;
     }
+
+    public Object getLikes() {
+        return likes;
+    }
 }

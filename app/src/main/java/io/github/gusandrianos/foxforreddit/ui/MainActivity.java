@@ -13,17 +13,19 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.stetho.Stetho;
+
+import java.util.ArrayList;
 import java.util.List;
 
-import foxApiWrapper.lib.RedditRequest;
 import io.github.gusandrianos.foxforreddit.R;
+import io.github.gusandrianos.foxforreddit.data.models.ChildrenItem;
+import io.github.gusandrianos.foxforreddit.data.models.Listing;
 import io.github.gusandrianos.foxforreddit.data.models.Post;
 import io.github.gusandrianos.foxforreddit.data.models.Token;
 import io.github.gusandrianos.foxforreddit.utilities.InjectorUtils;
-import io.github.gusandrianos.foxforreddit.viewmodels.PopularFragmentViewModel;
-import io.github.gusandrianos.foxforreddit.viewmodels.PopularFragmentViewModelFactory;
-import io.github.gusandrianos.foxforreddit.viewmodels.TokenViewModel;
-import io.github.gusandrianos.foxforreddit.viewmodels.TokenViewModelFactory;
+import io.github.gusandrianos.foxforreddit.viewmodels.PostViewModel;
+import io.github.gusandrianos.foxforreddit.viewmodels.PostViewModelFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,28 +35,25 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        TokenViewModelFactory factory = InjectorUtils.getInstance().provideTokenViewModelFactory();
-//        TokenViewModel viewModel = new ViewModelProvider(this, factory).get(TokenViewModel.class);
-//        viewModel.getToken().observe(this, new Observer<Token>() {
-//            @Override
-//            public void onChanged(Token token) {
-//                mToken = token;
-//                initializeUI();
-//            }
-//        });
-
-        MainActivity.super.onCreate(savedInstanceState);
+        mToken = InjectorUtils.getInstance().provideTokenRepository(getApplication()).getToken();
+        initializeUI();
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Stetho.initializeWithDefaults(this);
         result = findViewById(R.id.result);
     }
 
     private void initializeUI() {
-        PopularFragmentViewModelFactory factory = InjectorUtils.getInstance().providePopularFragmentViewModelFactory();
-        PopularFragmentViewModel viewModel = new ViewModelProvider(this, factory).get(PopularFragmentViewModel.class);
-        viewModel.getPosts(mToken).observe(this, new Observer<List<Post>>() {
+        PostViewModelFactory factory = InjectorUtils.getInstance().providePostViewModelFactory();
+        PostViewModel viewModel = new ViewModelProvider(this, factory).get(PostViewModel.class);
+        viewModel.getPosts(mToken, "r/GramersOfficial", "new").observe(this, new Observer<Listing>() {
             @Override
-            public void onChanged(List<Post> posts) {
+            public void onChanged(Listing listing) {
 
+                List<Post> posts = new ArrayList<>();  //ToDo check if it is correct
+                for (ChildrenItem child : listing.getTreeData().getChildren()) {
+                    posts.add(child.getPost());
+                }
                 result.setMovementMethod(new ScrollingMovementMethod());
                 result.setText("");
 
@@ -62,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
                     result.append("r/" + post.getSubreddit() + "\n");
                     result.append("Posted by u/" + post.getAuthor() + "\n");
                     result.append(post.getTitle() + "\n");
-                    result.append(post.isSelf() + "\n");
+                    if (post.getLikes() != null) {
+                        result.append(post.getLikes().toString() + "\n");
+                    }
                     String date = (String) android.text.format.DateUtils.getRelativeTimeSpanString(post.getCreatedUtc() * 1000);
                     result.append(date + "\n");
                     result.append(post.getScore() + "\n\n");
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadWebPage(View view) {
         Intent load = new Intent(this, Main2Activity.class);
-        load.putExtra("URL", "https://www.reddit.com/api/v1/authorize.compact?client_id=n1R0bc_lPPTtVg&response_type=code&state=ggfgfgfgga&redirect_uri=https://gusandrianos.github.io/login&duration=permanent&scope=identity,edit,flair,history,mysubreddits,privatemessages,read,report,save,submit,subscribe,vote,wikiread");
+        load.putExtra("URL", "https://www.reddit.com/api/v1/authorize.compact?client_id=n1R0bc_lPPTtVg&response_type=code&state=ggfgfgfgga&redirect_uri=https://gusandrianos.github.io/login&duration=permanent&scope=*");
         startActivityForResult(load, LAUNCH_SECOND_ACTIVITY);
     }
 
@@ -94,19 +95,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void getAuthorizedUserToken(String c) {
-        TokenViewModelFactory factory = InjectorUtils.getInstance().provideTokenViewModelFactory();
-        TokenViewModel viewModel = new ViewModelProvider(this, factory).get(TokenViewModel.class);
-        viewModel.getToken(c, "https://gusandrianos.github.io/login").observe(this, new Observer<Token>() {
-            @Override
-            public void onChanged(Token token) {
-                mToken = token;
-                initializeUI();
-            }
-        });
-    }
-
-    public void me(View view) {
-        RedditRequest okHttpHandler = new RedditRequest();
-        okHttpHandler.execute("https://oauth.reddit.com/api/v1/me/karma");
+        mToken = InjectorUtils.getInstance().provideTokenRepository(getApplication()).getNewToken(c, "https://gusandrianos.github.io/login");
+        initializeUI();
     }
 }

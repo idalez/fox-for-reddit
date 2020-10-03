@@ -23,13 +23,14 @@ import java.util.List;
 import java.util.Objects;
 
 import io.github.gusandrianos.foxforreddit.R;
+import io.github.gusandrianos.foxforreddit.data.models.ChildrenItem;
+import io.github.gusandrianos.foxforreddit.data.models.Listing;
 import io.github.gusandrianos.foxforreddit.data.models.Post;
 import io.github.gusandrianos.foxforreddit.data.models.Token;
 import io.github.gusandrianos.foxforreddit.utilities.InjectorUtils;
-import io.github.gusandrianos.foxforreddit.viewmodels.PopularFragmentViewModel;
-import io.github.gusandrianos.foxforreddit.viewmodels.PopularFragmentViewModelFactory;
-import io.github.gusandrianos.foxforreddit.viewmodels.TokenViewModel;
-import io.github.gusandrianos.foxforreddit.viewmodels.TokenViewModelFactory;
+import io.github.gusandrianos.foxforreddit.viewmodels.PostViewModel;
+import io.github.gusandrianos.foxforreddit.viewmodels.PostViewModelFactory;
+
 
 
 public class PopularFragment extends Fragment {
@@ -38,6 +39,7 @@ public class PopularFragment extends Fragment {
     private RecyclerView mPostRecyclerView;
     private List<Post> mPosts;
     private Token mToken;
+    private List<Post> dataSet;
     PostRecyclerViewAdapter mPostRecyclerViewAdapter;
 
     @Override
@@ -46,16 +48,7 @@ public class PopularFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         mView = inflater.inflate(R.layout.fragment_popular, container, false);
-        TokenViewModelFactory factory = InjectorUtils.getInstance().provideTokenViewModelFactory();
-        TokenViewModel viewModel = new ViewModelProvider(this, factory).get(TokenViewModel.class);
-        viewModel.getToken().observe(getViewLifecycleOwner(), new Observer<Token>() {
-            @Override
-            public void onChanged(Token token) {
-                mToken = token;
-                initializeUI(mView);
-            }
-        });
-        // Inflate the layout for this fragment
+        initializeUI(mView);
         return mView;
 
     }
@@ -70,28 +63,18 @@ public class PopularFragment extends Fragment {
     }
 
     private void initializeUI(View view) {
-        PopularFragmentViewModelFactory factory = InjectorUtils.getInstance().providePopularFragmentViewModelFactory();
-        PopularFragmentViewModel viewModel = new ViewModelProvider(this, factory).get(PopularFragmentViewModel.class);
-        viewModel.getPosts(mToken).observe(getViewLifecycleOwner(), new Observer<List<Post>>() {
+        mToken = InjectorUtils.getInstance().provideTokenRepository(getActivity().getApplication()).getToken();
+        PostViewModelFactory factory = InjectorUtils.getInstance().providePostViewModelFactory();
+        PostViewModel viewModel = new ViewModelProvider(this, factory).get(PostViewModel.class);
+        viewModel.getPosts(mToken).observe(getViewLifecycleOwner(), new Observer<Listing>() {
             @Override
-            public void onChanged(List<Post> posts) {
-                Log.d("POSTS", String.valueOf(posts.size()));
-                initRecycleView(view, posts);
+            public void onChanged(Listing listing) {
+                dataSet = new ArrayList<>();  //ToDo check if it is correct
+                for (ChildrenItem child : listing.getTreeData().getChildren()) {
+                    dataSet.add(child.getPost());
+                }
+                initRecycleView(view, dataSet);
             }
-
-//                result.setMovementMethod(new ScrollingMovementMethod());
-//                result.setText("");
-//
-//                for (Post post : posts) {
-//                    result.append("r/" + post.getSubreddit() + "\n");
-//                    result.append("Posted by u/" + post.getAuthor() + "\n");
-//                    result.append(post.getTitle() + "\n");
-//                    String date = (String) android.text.format.DateUtils.getRelativeTimeSpanString(post.getCreatedUtc()*1000);
-//                    result.append(date + "\n");
-//                    result.append(post.getScore() + "\n\n");
-//                }
-//        }
         });
     }
-
 }
