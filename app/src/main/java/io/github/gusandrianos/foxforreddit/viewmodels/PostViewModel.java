@@ -21,11 +21,11 @@ public class PostViewModel extends ViewModel {
         mPostRepository = postRepository;
     }
 
-    public LiveData<Listing> getPosts(Token token) {
-        return mPostRepository.getPosts(token);
+    public LiveData<Listing> getPosts(Token token, String after) {
+        return mPostRepository.getPosts(token, after);
     }
 
-    public LiveData<Listing> getPosts(Token token, String subreddit, String filter) {
-        return mPostRepository.getPosts(token, subreddit, filter);
+    public LiveData<Listing> getPosts(Token token, String subreddit, String filter, String after) {
+        return mPostRepository.getPosts(token, subreddit, filter, after);
     }
 }

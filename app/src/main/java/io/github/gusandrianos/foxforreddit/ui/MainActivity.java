@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     TextView result;
     Token mToken;
     int LAUNCH_SECOND_ACTIVITY = 1;
+    String after = "";
+    String subreddit = "r/funny";
+    String filter = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private void initializeUI() {
         PostViewModelFactory factory = InjectorUtils.getInstance().providePostViewModelFactory();
         PostViewModel viewModel = new ViewModelProvider(this, factory).get(PostViewModel.class);
-        viewModel.getPosts(mToken, "r/GramersOfficial", "new").observe(this, new Observer<Listing>() {
+        viewModel.getPosts(mToken, subreddit, filter, after).observe(this, new Observer<Listing>() {
             @Override
             public void onChanged(Listing listing) {
 
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     posts.add(child.getPost());
                 }
                 result.setMovementMethod(new ScrollingMovementMethod());
-                result.setText("");
+                result.setText("After: "+ listing.getTreeData().getAfter() + "\n");
 
                 for (Post post : posts) {
                     result.append("r/" + post.getSubreddit() + "\n");

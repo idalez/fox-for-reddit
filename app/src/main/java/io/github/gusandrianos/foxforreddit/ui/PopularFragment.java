@@ -41,6 +41,7 @@ public class PopularFragment extends Fragment {
     private Token mToken;
     private List<Post> dataSet;
     PostRecyclerViewAdapter mPostRecyclerViewAdapter;
+    String after="";
 
     @Override
     public View onCreateView(
@@ -66,7 +67,7 @@ public class PopularFragment extends Fragment {
         mToken = InjectorUtils.getInstance().provideTokenRepository(getActivity().getApplication()).getToken();
         PostViewModelFactory factory = InjectorUtils.getInstance().providePostViewModelFactory();
         PostViewModel viewModel = new ViewModelProvider(this, factory).get(PostViewModel.class);
-        viewModel.getPosts(mToken).observe(getViewLifecycleOwner(), new Observer<Listing>() {
+        viewModel.getPosts(mToken, after).observe(getViewLifecycleOwner(), new Observer<Listing>() {
             @Override
             public void onChanged(Listing listing) {
                 dataSet = new ArrayList<>();  //ToDo check if it is correct

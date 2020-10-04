@@ -36,11 +36,11 @@ public class PostRepository {
         return instance;
     }
 
-    public LiveData<Listing> getPosts(Token token, String subreddit, String filter) {
+    public LiveData<Listing> getPosts(Token token, String subreddit, String filter, String after) {
         String BEARER = " " + token.getTokenType() + " " + token.getAccessToken();
         Log.i("Brearer", BEARER);
 
-        Call<Listing> listing = redditAPI.getPosts(subreddit, filter, BEARER);
+        Call<Listing> listing = redditAPI.getPosts(subreddit, filter, after, BEARER);
 
         listing.enqueue(new Callback<Listing>() {
             @Override
@@ -59,7 +59,7 @@ public class PostRepository {
         return data;
     }
 
-    public LiveData<Listing> getPosts(Token token) {
-        return getPosts(token, "", "");
+    public LiveData<Listing> getPosts(Token token, String after) {
+        return getPosts(token, "", "", after);
     }
 }
