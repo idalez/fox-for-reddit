@@ -21,4 +21,8 @@ class PostViewModel(private val mPostRepository: PostRepository) : ViewModel() {
     fun votePost(dir: String, id: String, token: Token){
         mPostRepository.votePost(dir, id, token)
     }
+
+    fun getPostComments(subreddit: String, comments: String, article: String, token: Token){
+        mPostRepository.getPostComments(subreddit,comments,article,token)
+    }
 }

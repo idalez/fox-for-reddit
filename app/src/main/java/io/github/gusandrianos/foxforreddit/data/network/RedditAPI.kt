@@ -1,5 +1,6 @@
 package io.github.gusandrianos.foxforreddit.data.network
 
+import com.google.gson.JsonArray
 import io.github.gusandrianos.foxforreddit.data.models.Listing
 import retrofit2.Call
 import retrofit2.http.*
@@ -38,4 +39,12 @@ interface RedditAPI {
             @Field("id") id: String?,
             @Field("rank") rank: Int?
     ): Call<Void>
+
+    @GET("{subreddit}/comments/{comments}/{article}")
+    fun getPostComments(
+            @Path("subreddit") subreddit: String,
+            @Path("comments") comments: String,
+            @Path("article") article: String,
+            @Header("Authorization") bearer: String?
+    ): Call<JsonArray>
 }
