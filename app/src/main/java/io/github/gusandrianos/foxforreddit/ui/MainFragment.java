@@ -1,6 +1,7 @@
 package io.github.gusandrianos.foxforreddit.ui;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 
 import io.github.gusandrianos.foxforreddit.R;
 import io.github.gusandrianos.foxforreddit.data.models.Token;
+import io.github.gusandrianos.foxforreddit.data.models.gene.SinglePost;
 import io.github.gusandrianos.foxforreddit.utilities.InjectorUtils;
 
 public class MainFragment extends Fragment {
@@ -56,6 +58,7 @@ public class MainFragment extends Fragment {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(), 0);
         viewPagerAdapter.addFragment(homeFragments.get(0), "HOME");
         viewPagerAdapter.addFragment(homeFragments.get(1), "POPULAR");
+        viewPagerAdapter.addFragment(new SinglePostFragment(), "Bromia");
 
         viewPager.setAdapter(viewPagerAdapter);
     }

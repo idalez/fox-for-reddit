@@ -1,6 +1,8 @@
 package io.github.gusandrianos.foxforreddit.data.models.gencomments;
 
 import java.util.List;
+
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Data{
@@ -8,8 +10,13 @@ public class Data{
     @SerializedName("modhash")
     private String modhash;
 
+    @Expose
     @SerializedName("children")
-    private List<ChildrenItem> children;
+    private List<Object> children;
+
+//    @Expose
+//    @SerializedName("children")
+//    private List<String> moreChildren;
 
     @SerializedName("before")
     private Object before;
@@ -93,7 +100,7 @@ public class Data{
     private int downs;
 
     @SerializedName("edited")
-    private boolean edited;
+    private String edited;
 
     @SerializedName("author")
     private String author;
@@ -105,7 +112,7 @@ public class Data{
     private List<Object> treatmentTags;
 
     @SerializedName("author_flair_background_color")
-    private String authorFlairBackgroundColor;
+    private Object authorFlairBackgroundColor;
 
     @SerializedName("report_reasons")
     private Object reportReasons;
@@ -150,7 +157,7 @@ public class Data{
     private String permalink;
 
     @SerializedName("author_flair_css_class")
-    private String authorFlairCssClass;
+    private Object authorFlairCssClass;
 
     @SerializedName("num_reports")
     private Object numReports;
@@ -180,13 +187,13 @@ public class Data{
     private boolean sendReplies;
 
     @SerializedName("author_flair_text")
-    private String authorFlairText;
+    private Object authorFlairText;
 
     @SerializedName("archived")
     private boolean archived;
 
     @SerializedName("author_flair_text_color")
-    private String authorFlairTextColor;
+    private Object authorFlairTextColor;
 
     @SerializedName("can_mod_post")
     private boolean canModPost;
@@ -228,7 +235,7 @@ public class Data{
         return modhash;
     }
 
-    public List<ChildrenItem> getChildren(){
+    public List<Object> getChildren(){
         return children;
     }
 
@@ -340,7 +347,7 @@ public class Data{
         return downs;
     }
 
-    public boolean isEdited(){
+    public String isEdited(){
         return edited;
     }
 
@@ -356,7 +363,7 @@ public class Data{
         return treatmentTags;
     }
 
-    public String getAuthorFlairBackgroundColor(){
+    public Object getAuthorFlairBackgroundColor(){
         return authorFlairBackgroundColor;
     }
 
@@ -416,7 +423,7 @@ public class Data{
         return permalink;
     }
 
-    public String getAuthorFlairCssClass(){
+    public Object getAuthorFlairCssClass(){
         return authorFlairCssClass;
     }
 
@@ -456,7 +463,7 @@ public class Data{
         return sendReplies;
     }
 
-    public String getAuthorFlairText(){
+    public Object getAuthorFlairText(){
         return authorFlairText;
     }
 
@@ -464,7 +471,7 @@ public class Data{
         return archived;
     }
 
-    public String getAuthorFlairTextColor(){
+    public Object getAuthorFlairTextColor(){
         return authorFlairTextColor;
     }
 

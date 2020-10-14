@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName;
 public class Replies{
 
     @SerializedName("data")
-    private Data replyData;
+    private Data data;
 
     @SerializedName("kind")
     private String kind;
 
-    public Data getreplyData(){
-        return replyData;
+    public Data getReplyData(){
+        return data;
     }
 
     public String getKind(){

@@ -1,7 +1,10 @@
 package io.github.gusandrianos.foxforreddit.data.network
 
 import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import io.github.gusandrianos.foxforreddit.data.models.Listing
+import org.json.JSONArray
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.http.*
 
