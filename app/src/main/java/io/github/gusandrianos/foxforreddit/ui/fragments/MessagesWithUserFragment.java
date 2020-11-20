@@ -37,6 +37,7 @@ import io.github.gusandrianos.foxforreddit.utilities.MessagesWithUserAdapter;
 public class MessagesWithUserFragment extends Fragment {
 
     Data data;
+    String replyTo;
 
     @Nullable
     @Override
@@ -94,6 +95,8 @@ public class MessagesWithUserFragment extends Fragment {
             adapter.setStateRestorationPolicy(RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY);
 
             messagesRecyclerView.setAdapter(adapter);
+
+            replyTo = replies.getData().getChildren().get(replies.getData().getChildren().size()-1).getData().getName();
         } else {
             TextView txtUser = view.findViewById(R.id.txt_messages_with_user_item_username);
             TextView txtTimeSent = view.findViewById(R.id.txt_messages_with_user_item_time_sent);
@@ -105,6 +108,8 @@ public class MessagesWithUserFragment extends Fragment {
 
             ScrollView scrollView = view.findViewById(R.id.container_messages_with_user_item);
             scrollView.setVisibility(View.VISIBLE);
+
+            replyTo = data.getName();
         }
     }
 
@@ -118,7 +123,7 @@ public class MessagesWithUserFragment extends Fragment {
         MenuItem messageButton = toolbar.getMenu().findItem(R.id.reply_message);
         messageButton.setOnMenuItemClickListener(item -> {
 
-            navController.navigate(MessagesWithUserFragmentDirections.actionMessagesWithUserFragmentToComposeReplyToUserMessageFragment(data.getName()));
+            navController.navigate(MessagesWithUserFragmentDirections.actionMessagesWithUserFragmentToComposeReplyToUserMessageFragment(replyTo));
             return true;
         });
 
