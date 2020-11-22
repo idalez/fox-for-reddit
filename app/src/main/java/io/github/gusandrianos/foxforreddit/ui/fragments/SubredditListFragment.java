@@ -108,6 +108,7 @@ public class SubredditListFragment extends Fragment implements SubredditListAdap
         AppBarConfiguration appBarConfiguration = mainActivity.appBarConfiguration;
         Toolbar toolbar = requireActivity().findViewById(R.id.toolbar_subreddits);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
     }
 }

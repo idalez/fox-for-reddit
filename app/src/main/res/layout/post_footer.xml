@@ -28,7 +28,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="255.5k"
-            android:textColor="#FF5A5A5A" />
+            android:textColor="@android:color/tab_indicator_text" />
 
         <ImageButton
             android:id="@+id/imgbtn_post_vote_down"
@@ -45,7 +45,7 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:gravity="center_vertical"
         android:text="255.5k"
-        android:textColor="#FF5A5A5A"
+        android:textColor="@android:color/tab_indicator_text"
         app:drawableStartCompat="@drawable/ic_round_mode_comment_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline2"

@@ -70,11 +70,14 @@ public class SubredditSearchResultsFragment extends Fragment {
         NavController navController = NavHostFragment.findNavController(this);
 
         Toolbar toolbar = view.findViewById(R.id.toolbar_fragment_results_search_subreddit);
-        toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
         toolbar.inflateMenu(R.menu.sorting_and_search_bar);
-        toolbar.getMenu().getItem(1).getSubMenu().getItem(0).setVisible(true);
+        toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
+        toolbar.getMenu().findItem(R.id.search_sorting_v2).getIcon().setTint(Cyanea.getInstance().getMenuIconColor());
+        toolbar.getMenu().findItem(R.id.search_bar).getIcon().setTint(Cyanea.getInstance().getMenuIconColor());
 
-        MenuItem searchItem = toolbar.getMenu().getItem(0);
+        toolbar.getMenu().findItem(R.id.search_sorting_v2).getSubMenu().getItem(0).setVisible(true);
+        MenuItem searchItem = toolbar.getMenu().findItem(R.id.search_bar);
 
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setQueryHint("Search in " + mSubreddit);

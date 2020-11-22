@@ -79,6 +79,8 @@ public class SearchFragment extends Fragment implements SearchAdapter.OnSearchIt
         Toolbar toolbar = view.findViewById(R.id.toolbar_fragment_search);
         toolbar.inflateMenu(R.menu.search);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
+
         searchBarItem = toolbar.getMenu().findItem(R.id.search);
         NavigationUI.setupWithNavController(toolbar, navController);
 

@@ -98,6 +98,10 @@ public class SearchResultsFragment extends Fragment {
         Toolbar toolbar = view.findViewById(R.id.toolbar_fragment_results_search);
         toolbar.inflateMenu(R.menu.sorting_and_search_button);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
+        toolbar.getMenu().findItem(R.id.search_sorting).getIcon().setTint(Cyanea.getInstance().getMenuIconColor());
+        toolbar.getMenu().findItem(R.id.search).getIcon().setTint(Cyanea.getInstance().getMenuIconColor());
+
         toolbar.getMenu().findItem(R.id.search_sorting).getSubMenu().getItem(0).setVisible(true);
 
         toolbar.getMenu().findItem(R.id.search).setOnMenuItemClickListener(item -> {

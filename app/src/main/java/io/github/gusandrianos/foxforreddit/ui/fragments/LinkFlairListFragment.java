@@ -88,6 +88,7 @@ public class LinkFlairListFragment extends Fragment implements LinkFlairListAdap
         NavController navController = NavHostFragment.findNavController(this);
         Toolbar toolbar = view.findViewById(R.id.toolbar_link_flairs);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
 
         toolbar.inflateMenu(R.menu.button_clear_link_flair);
         toolbar.getMenu().findItem(R.id.button_clear_link_flair).setOnMenuItemClickListener(clear -> {

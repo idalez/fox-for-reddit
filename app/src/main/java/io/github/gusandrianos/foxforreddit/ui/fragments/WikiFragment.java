@@ -69,6 +69,7 @@ public class WikiFragment extends Fragment {
         NavController navController = NavHostFragment.findNavController(this);
         Toolbar toolbar = view.findViewById(R.id.toolbar_wiki);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
         NavigationUI.setupWithNavController(toolbar, navController);
     }
 }

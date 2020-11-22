@@ -80,6 +80,7 @@ public class ModeratorsListFragment extends Fragment implements ModeratorsListAd
         NavController navController = NavHostFragment.findNavController(this);
         Toolbar toolbar = view.findViewById(R.id.toolbar_moderators);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
 
         NavigationUI.setupWithNavController(toolbar, navController);
     }

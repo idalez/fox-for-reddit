@@ -58,8 +58,10 @@ public class InboxFragment extends Fragment {
         Toolbar toolbar = requireActivity().findViewById(R.id.toolbar_fragment_messages);
         toolbar.inflateMenu(R.menu.message);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
+        toolbar.getMenu().findItem(R.id.message_button).getIcon().setTint(Cyanea.getInstance().getMenuIconColor());
 
-        MenuItem messageButton = toolbar.getMenu().getItem(0);
+        MenuItem messageButton = toolbar.getMenu().findItem(R.id.message_button);
         messageButton.setOnMenuItemClickListener(item -> {
             navController.navigate(ComposeMessageFragmentDirections.actionGlobalComposeMessageFragment(null));
             return true;

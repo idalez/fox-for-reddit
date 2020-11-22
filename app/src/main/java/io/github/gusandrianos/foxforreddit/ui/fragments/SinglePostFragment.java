@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -803,6 +804,7 @@ public class SinglePostFragment extends Fragment implements ExpandableCommentIte
     private void setUpMenu(Toolbar toolbar, Data postData, int postType, View view, MainActivity mainActivity) {
         toolbar.inflateMenu(R.menu.self_single_post_menu);
         Menu menu = toolbar.getMenu();
+        menu.findItem(R.id.single_post_reply).getIcon().setTint(Cyanea.getInstance().getMenuIconColor());
 
         if (mainActivity.getFoxSharedViewModel().getCurrentUserUsername().equals(postData.getAuthor())) {
 
@@ -975,16 +977,13 @@ public class SinglePostFragment extends Fragment implements ExpandableCommentIte
     private void setUpNavigation(View view, Data postData, int postType) {
         CollapsingToolbarLayout collapsingToolbar = requireActivity().findViewById(R.id.single_post_collapsing_toolbar);
         AppBarLayout appBarLayout = view.findViewById(R.id.appBarLayout_fragment_single_post);
+        ConstraintLayout includeHeader = view.findViewById(R.id.include_header_single_post);
         Toolbar toolbar = view.findViewById(R.id.single_post_toolbar);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
         collapsingToolbar.setBackgroundColor(Cyanea.getInstance().getBackgroundColor());
 
-
-        ConstraintLayout includeHeader = view.findViewById(R.id.include_header_single_post);
-        int color = Color.BLACK;
-        if(Cyanea.getInstance().isDark())
-            color = Color.WHITE;
-
+        int color = Cyanea.getInstance().getMenuIconColor();
         int colorRed = Color.red(color);
         int colorGreen = Color.green(color);
         int colorBlue = Color.blue(color);

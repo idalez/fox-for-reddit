@@ -54,6 +54,7 @@ public class ComposeReplyToUserMessageFragment extends Fragment {
         Toolbar toolbar = view.findViewById(R.id.compose_reply_to_user_message_toolbar);
         toolbar.inflateMenu(R.menu.button_send_message);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
 
         MenuItem sendItem = toolbar.getMenu().findItem(R.id.send_message);
         sendItem.setOnMenuItemClickListener(item -> checkField(view));

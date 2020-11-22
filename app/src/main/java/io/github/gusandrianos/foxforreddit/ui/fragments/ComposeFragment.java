@@ -236,6 +236,7 @@ public class ComposeFragment extends Fragment {
         Toolbar toolbar = view.findViewById(R.id.toolbar_compose);
         toolbar.inflateMenu(R.menu.button_submit_post);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
 
         BottomNavigationView bottomNavigationView = mainActivity.bottomNavView;
         bottomNavigationView.setVisibility(View.GONE);

@@ -301,6 +301,7 @@ public class CommentsFragment extends Fragment implements ExpandableCommentItem.
         NavController navController = NavHostFragment.findNavController(this);
         Toolbar toolbar = view.findViewById(R.id.toolbar_more_children);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
 
         MainActivity mainActivity = (MainActivity) requireActivity();
         BottomNavigationView bottomNavigationView = mainActivity.bottomNavView;

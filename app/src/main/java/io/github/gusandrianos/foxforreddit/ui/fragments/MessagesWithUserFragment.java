@@ -144,6 +144,7 @@ public class MessagesWithUserFragment extends Fragment implements MessagesWithUs
         NavController navController = NavHostFragment.findNavController(this);
         Toolbar toolbar = view.findViewById(R.id.messages_with_user_toolbar);
         toolbar.inflateMenu(R.menu.reply_message);
+        toolbar.getMenu().findItem(R.id.reply_message).getIcon().setTint(Cyanea.getInstance().getMenuIconColor());
 
         MenuItem messageButton = toolbar.getMenu().findItem(R.id.reply_message);
         messageButton.setVisible(true);
@@ -162,6 +163,7 @@ public class MessagesWithUserFragment extends Fragment implements MessagesWithUs
 
         Toolbar toolbar = view.findViewById(R.id.messages_with_user_toolbar);
         toolbar.setBackgroundColor(Cyanea.getInstance().getPrimary());
+        toolbar.setTitleTextColor(Cyanea.getInstance().getMenuIconColor());
 
         NavigationUI.setupWithNavController(toolbar, navController);
     }
